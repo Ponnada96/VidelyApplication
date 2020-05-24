@@ -1,0 +1,23 @@
+﻿@model List<VidelyApplication.ViewModels.RandomMovieViewModel>
+
+@{
+    ViewBag.Title = "GetMovies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var className = Model.Count > 0 ? "popular" : "";
+}
+
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <text>Movie Rented by customers</text>
+        <li class="className">@item.Movie.Name</li>
+        foreach (var customer in item.Customers)
+        {
+            <li>@customer.Name</li>
+        }
+    }
+</ul>
+
